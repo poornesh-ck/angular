@@ -1,0 +1,33 @@
+<!-- <p>edit-product works!</p> -->
+
+<form [formGroup]="pdt" (ngSubmit)="onSubmit()">
+<div class="mb-2">
+    &nbsp; &nbsp;<label for="formGroupExampleInput" class="form-label"> Price</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Price" style="width: 230px; margin: auto;" formControlName="Price" [class.is-invalid]="Price.invalid && Price.touched && pricezero"  (input)="pricecheck(Price.value)" >
+    <div *ngIf="Price.touched"> 
+        <div *ngIf="Price.invalid"> 
+        <small class="text-danger" *ngIf="Price.errors?.['required']">Price Can't be empty</small>
+        <small class="text-danger" *ngIf="Price.errors?.['pattern']">Price Should be Greater Than Zero'</small>
+        
+    </div>
+    <small class="text-danger" *ngIf="!qtyzero" >Price should be greater than 0</small>
+    </div>
+</div>
+  <div class="mb-2">
+    &nbsp; &nbsp;<label for="formGroupExampleInput2" class="form-label" style="margin-right: auto;">Quantity</label>
+ 
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Quantity" style="width: 230px; margin: auto;" formControlName="qty" [class.is-invalid]="qty.invalid && qty.touched&& qtyzero" (input)="qtycheck(qty.value)" >
+    <div *ngIf="qty.touched"> 
+        <div *ngIf="qty.invalid"> 
+        <small class="text-danger" *ngIf="qty.errors?.['required']">Price Can't be empty</small>
+        <small class="text-danger" *ngIf="qty.errors?.['pattern']">Price Should be Greater Than Zero'</small>
+        
+    </div>
+    <small class="text-danger" *ngIf="!qtyzero" >Quantity should be greater than 0</small>
+
+    </div>
+
+</div> &nbsp; &nbsp;  &nbsp; &nbsp;
+<button type="submit" class="btn btn-primary"  [disabled]="!pdt.valid|| !pricezero ||  !qtyzero" (click)="eplist()">Update</button> &nbsp; &nbsp;
+<input type="reset" class="btn btn-danger" value="Cancel" (click)="oncancel()"> 
+</form>

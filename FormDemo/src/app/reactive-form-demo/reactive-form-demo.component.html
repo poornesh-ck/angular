@@ -1,0 +1,23 @@
+<p>reactive-form-demo works!</p>
+<input type="text" [formControl]="myName">
+
+<form [formGroup]="emp" novalidate> 
+    <div><p>Employee id<input type="text" formControlName="eid"  [class.is-invalid]="eid.invalid && eid.touched"></p>
+        <div *ngIf="eid.touched">
+        <div *ngIf="eid.invalid">
+        <small style="color: crimson;" *ngIf="eid.errors?.['required']">*Required</small>
+        <small style="color: crimson;" *ngIf="eid.errors?.['pattern']">*pattern mismatch </small>
+        <small style="color: crimson;" *ngIf="eid.errors?.['minlength']">*min length required </small>
+    </div>
+    </div>
+    </div>
+    <p>Employee name<input type="text" formControlName="ename" ></p>
+    <p>Employee salary<input type="text" formControlName="sal" ></p>
+    <p>Dept</p><select [(ngModel)]="dept" name="dept" formControlName="dept">
+        <option value="all">All</option>
+    
+        <option *ngFor="let i of departments" value="{{i}}">{{i}}</option>
+    </select>
+    
+
+</form>

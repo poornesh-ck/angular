@@ -1,0 +1,3 @@
+import { Products } from "./Product";
+
+export let plist:Products[]=[new Products('P101','Iphone 15','16 GB ram',100000,10,'Mobiles'),new Products('P102','Samsung Galaxy S22+','16 GB ram',80000,12,'Mobiles'),new Products('P103','Lenova Legion','16 GB ram',100000,10,'Laptops'),new Products('P104','Apple Airpodes','upto 30db ANC',20000,25,'Earphones'),new Products('P105','Samsung Tablet2','8 GB ram',89999,9,'Tablets')]

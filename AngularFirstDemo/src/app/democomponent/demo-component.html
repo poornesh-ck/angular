@@ -1,0 +1,8 @@
+<!-- <div><h1>This is Demo-component</h1>  </div> <br>
+<div><h1>{{Myname}}</h1></div> -->
+<h1>This name printing from child</h1>
+<input type="text" #iname >
+<button (click)="setName(iname.value)" placeholder="submit">submit</button>
+<h1> this is from child {{Myname}}</h1>
+<h1>{{gotchange}}</h1>
+<ng-content></ng-content>

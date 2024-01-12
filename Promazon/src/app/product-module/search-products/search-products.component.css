@@ -1,0 +1,105 @@
+/* body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.box{
+    height: 30px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0, 0, 0.3);
+
+}
+.box:hover input{
+    width: 400px;
+}
+*/
+/* .box input{
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
+} */
+button{
+    background: transparent;
+    border: none;
+    float: inline-end;
+    width: 10px;
+    
+}
+
+.box button .fa{
+    float: left;
+    width: 0;
+    
+    background: transparent;
+    outline: none;
+    color: #BFA181;
+    /* font-size: 17px; */
+    border: none;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    /* color: white;
+    font-size: 18px;
+   
+    width: 0;
+    height: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent; */
+} 
+
+input[type=search] {
+    width: 200px;
+    padding: 14px 20px 10px 45px;
+    border:#BFA181 solid 1.5px;
+    font-size: 18px;
+    border-radius: 25px;
+    background-position: 2% 50%;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    /* background-image: url('search.svg'); */
+    background-color: transparent;
+    transition: 0.5s all ease-in-out;
+    filter: brightness(60%);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight:400;
+    /* border-radius: 0px; */
+    /* text-decoration: none; */
+    /* padding: 14px 21px; */
+    font-size: 14px;
+    /* line-height: 25px; */
+    
+}
+
+input[type=search]:focus,
+input[type=search]:not(:placeholder-shown) {
+    width: 350px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    border:#BFA181 solid 1.5px;
+    filter: brightness(100%);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #BFA181;
+    font-weight:400;
+    /* border-radius: 0px; */
+    /* text-decoration: none; */
+    /* padding: 14px 21px; */
+    font-size: 13px;
+    /* line-height: 25px; */
+}
+

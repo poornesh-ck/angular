@@ -1,0 +1,33 @@
+
+<app-product></app-product>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+<div class="box p-5">
+    <input type="search" placeholder="Search" [(ngModel)]="searchText">
+    <button (click)="onclick()"><i class="fa fa-search"></i></button>
+<!-- <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="5"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg> -->
+   
+</div>
+
+<div *ngIf="bol==true" >
+    
+<div  class="card text-bg-dark mb-3" *ngFor="let i of pl"  style="max-width: 18rem;">   
+    
+   
+   
+    <div class="card-header">Product ID: {{i.pid}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{i.pname}}</h5>
+      <p class="card-text">{{i.pdesc}}</p>
+      <p class="card-text">{{i.price|currency:'GBP'}}</p>
+      <p class="text-danger" >Qty: {{i.pqty}}</p>
+      <!-- <button style="background-color: black;color: white; border-color: white;" (click)="onedit(i.pid)" ><a  >Edit</a> </button> -->
+      
+      
+    </div>
+    <!-- <button style="background-color: black;color: red; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"  (click)="delp(i)"  ><a >Delete</a> </button> -->
+    
+  </div>
+
+</div>
+
+

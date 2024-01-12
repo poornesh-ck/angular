@@ -1,0 +1,92 @@
+<button (click)="addEmp()">ADD EMPLOYEES</button>
+<button (click)="delEmp()">Remove EMPLOYEES</button><br>
+<select [(ngModel)]="dept" name="dept">
+    <option value="all">All</option>
+
+    <option *ngFor="let i of departments" value="{{i}}">{{i}}</option>
+</select><br>
+
+<form #myForm="ngForm" (ngSubmit)="dataSubmited()">
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Employee Id</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" [(ngModel)]="emp.eid" name="eid"    #eid="ngModel"  required [class.is-invalid]=" eid.invalid&& eid.touched" pattern="^[E].[0-9]+">
+    <div *ngIf="eid.touched"> 
+        <div *ngIf="eid.invalid"> 
+        <small class="text-danger" *ngIf="eid.errors?.['required']">Employee Id Can't be empty</small>
+        <small class="text-danger" *ngIf="eid.errors?.['pattern']">Employee Id Should be like 'E123'</small>
+        </div>
+    </div>
+  </div>
+<div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Employee Name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder" [(ngModel)]="emp.ename" name="ename"  #ename="ngModel"  required [class.is-invalid]=" ename.invalid&& ename.touched" pattern="^[A-za-z]+$" minlength="3">
+    <div *ngIf="ename.invalid">
+        <div *ngIf="ename.invalid">
+            
+        </div>
+
+    </div>
+</div>
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Salary</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder" [(ngModel)]="emp.salary" name="sal"  #esal="ngModel"  required [class.is-invalid]=" esal.invalid&& esal.touched">
+  </div>
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Departmet</label>
+    <select class="form-select" aria-label="Disabled select example" #department [(ngModel)]="emp.dept" name="department" >    
+        <option selected>Open this select menu</option>
+        <option *ngFor="let i of departments" value="{{i}}">{{i}}</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary" [disabled]="myForm.form.invalid || hasError">Add Employee</button> &nbsp; &nbsp;
+
+      <input type="reset" class="btn btn-danger" value="Clear"> 
+    
+  </div>
+</form>
+<br>
+
+<table>
+
+    <thead>
+
+      <tr>
+
+        <th>ID</th>
+
+        <th>Name</th>
+
+        <th>Salary</th>
+
+        <th>Dept</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let e of list">
+
+          <td> {{e.eid}} </td>
+
+          <td> {{e.ename}} </td>
+
+          <td> {{e.salary}} </td>
+
+          <td> {{e.dept}} </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+
+
+
+
+<p *ngFor="let i of list|deptFilter:dept" class="list">
+    <app-employee [Emp]="i"></app-employee>
+</p>
+

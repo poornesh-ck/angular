@@ -1,0 +1,105 @@
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.28/dist/sweetalert2.min.css
+" rel="stylesheet">
+<app-product></app-product><br>
+
+<div *ngIf="sub==true">
+  <label>Product Added Sucessfully</label>
+</div>
+
+
+<form #myForm="ngForm" (ngSubmit)="dataSubmited()">
+
+<div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Product Id</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Product Id" [(ngModel)]="pl.pid" name="pid"     #pid="ngModel"  required [class.is-invalid]=" pid.invalid&& pid.touched" pattern="^[P].[0-9]+" >
+    <div *ngIf="pid.touched"> 
+        <div *ngIf="pid.invalid"> 
+        <small class="text-danger" *ngIf="pid.errors?.['required']">Product Id Can't be empty</small>
+        <small class="text-danger" *ngIf="pid.errors?.['pattern']">Product Id Should be like 'P123'</small>
+        </div>
+    </div>
+</div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Product Name</label>
+ 
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Product Name" [(ngModel)]="pl.pname" name="pname"  minlength="3"      #pname="ngModel"  required [class.is-invalid]=" pname.invalid&& pname.touched" minlength="3" >
+    <div *ngIf="pname.touched"> 
+        <div *ngIf="pname.invalid"> 
+        <small class="text-danger" *ngIf="pname.errors?.['required']">Product Name Can't be empty</small>
+        <small class="text-danger" *ngIf="pname.errors?.['minlength']">Should be greater than 3 characters</small>
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Product Description</label>
+    
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Product Description " [(ngModel)]="pl.pdesc" name="pdesc"          #pdesc="ngModel"  required [class.is-invalid]=" pdesc.invalid&& pdesc.touched">
+    <div *ngIf="pdesc.touched"> 
+        <div *ngIf="pdesc.invalid"> 
+        <small class="text-danger" *ngIf="pdesc.errors?.['required']">Product Description Can't be empty</small>
+        
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Price</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Product Price" [(ngModel)]="pl.price" name="price" #price="ngModel"  required [class.is-invalid]=" price.invalid&& price.touched" pattern="^[1-9]\d*$">
+    <div *ngIf="price.touched"> 
+        <div *ngIf="price.invalid"> 
+        <small class="text-danger" *ngIf="price.errors?.['required']">Product Price Can't be empty</small>
+        <small class="text-danger" *ngIf="price.errors?.['pattern']">Price Should greater than 0</small>
+        
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Quantity</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Product Quantity" [(ngModel)]="pl.pqty" name="pqty" #pqty="ngModel" required [class.is-invalid]=" pqty.invalid&& pqty.touched" pattern="^[1-9]\d*$">
+    <div *ngIf="pqty.touched"> 
+        <div *ngIf="pqty.invalid"> 
+        <small class="text-danger" *ngIf="pqty.errors?.['required']">Product Quantity Can't be empty</small>
+        <small class="text-danger" *ngIf="pqty.errors?.['pattern']">Quantity Should greater than 0</small>
+        
+        </div>
+    </div>
+</div>
+<div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Product Category</label>
+    <select class="form-select" aria-label="Disabled select example" [(ngModel)]='pl.pcat' name="cat" #cat="ngModel" required [class.is-invalid]="cat.invalid && cat.touched && hasError" (blur)="validate(cat.value)" (change)="validate(cat.value)" >    
+        <option selected>Open this select menu</option>
+        <option *ngFor="let i of Categories " value="{{i}}">{{i}}</option>
+        
+      </select>
+      <small class="text-danger" [class.d-none]="cat.untouched || !hasError">Select  Product Category </small>
+      <br>
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.form.invalid || hasError" name="cat"  (click)="onClick()" style="background-color: #1f1f1f; border:  1px solid #BFA181  ;color: #BFA181;text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: 'Montserrat', sans-serif; font-weight:350;font-size: 12px;">Add Product</button> &nbsp; &nbsp;
+
+      <input type="reset" class="btn btn-danger" value="Clear" style="background-color:  #1f1f1f; color: #BFA181;"> 
+</div>
+
+</form>
+<div *ngIf="sub==true">
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

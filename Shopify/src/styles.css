@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #0A1828;
+}
+
+
+
+/* body {
+	background: linear-gradient(
+		-45deg,
+		#ffffff,
+		#ffe4e9,
+		#fcc8e2,
+		#f6baed,
+		#efb0ff,
+		#d3a2ff,
+		#8eb8ff,
+		#91efff,
+		#d5f9ff
+	);
+	background-size: 1000% 1000%;
+	animation: gradient 9s ease infinite;
+	height: 100vh;
+}
+
+ 
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} */
+
+.card {
+    margin: auto;
+    border: 2.5px solid #BFA181 ;
+   
+    
+}
+.card:hover::before{
+    transform: scale(1.2);
+    
+    z-index: 2;
+    box-shadow: 0 0 15px rgb(2, 255, 255)  ;
+    filter: blur(3px);
+    
+}
+.card:hover{
+    transform: scale(1.2);
+    z-index: 2;
+    color: rgb(2, 255, 255) ;
+    box-shadow: 0 0 10px #BFA181;
+    /* text-shadow: 0 0 15px#d35400; */
+    z-index: l;
+
+}

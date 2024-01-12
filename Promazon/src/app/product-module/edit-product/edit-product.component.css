@@ -1,0 +1,17 @@
+.form-control:hover::before{
+    transform: scale(1.2);
+    
+    z-index: 2;
+    box-shadow: 0 0 15px rgb(2, 255, 255)  ;
+    filter: blur(3px);
+    
+}
+.form-control:hover{
+    transform: scale(1.2);
+    z-index: 2;
+    color: black;
+    box-shadow: 0 0 15px  whitesmoke ;
+    /* text-shadow: 0 0 15px#d35400; */
+    z-index: l;
+
+}

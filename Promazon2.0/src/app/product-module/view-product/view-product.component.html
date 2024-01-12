@@ -1,0 +1,35 @@
+<app-product></app-product><br><br>
+
+
+<select [(ngModel)]="category" name="cat" style="background-color: #1f1f1f;color: #BFA181; border-color: #BFA181; ">
+    <option value="All">All</option>
+
+    <option *ngFor="let i of Categories" value="{{i}}">{{i}}</option>
+</select><br>
+
+<div  class="card text-bg-dark mb-3"  *ngFor="let i of pl|productFilter:category"  style="max-width: 18rem;">
+    <div *ngIf="i.pid==productid && edit ">
+    <app-edit-product [vue]="i" (comp)="changineditBoolean($event)"></app-edit-product></div>
+   
+    <div class="card-header">Product ID: {{i.pid}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{i.pname}}</h5>
+      <p class="card-text">{{i.pdesc}}</p>
+      <p class="card-text">{{i.price|currency:'GBP'}}</p>
+      <p class="text-danger" >Qty: {{i.pqty}}</p>
+      <button style="background-color: #1f1f1f;color: #BFA181; border-color: #BFA181;font-family: 'Montserrat', sans-serif; font-weight:400;
+      letter-spacing: 3px;  padding: 8px 12px;
+      font-size: 12px;
+      line-height: 19px; color: #BFA181;" (click)="onedit(i.pid)" ><a  >Edit</a> </button>
+      
+      
+    </div>
+    <button style="background-color: #1f1f1f;color: #BFA181; border-color: #BFA181;font-family: 'Montserrat', sans-serif; font-weight:400;
+    letter-spacing: 3px;  padding: 8px 12px;
+    font-size: 12px;
+    line-height: 19px; color: #BFA181;"  (click)="delp(i)"  ><a >DELETE</a> </button>
+    
+  </div>
+
+
+

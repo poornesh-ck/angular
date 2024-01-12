@@ -1,0 +1,30 @@
+<!-- <div appDeptDirective [dept]="Emp.dept" class="card text-bg-dark mb-3" style="max-width: 18rem; ">
+    <div class="card-header">Employee {{Emp.ename}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{Emp.dept}}</h5>
+      <p class="card-text">Salary: {{Emp.salary}}</p>
+    </div>
+  </div> -->
+  <!-- <div appDeptDirective [dept]="Emp.dept" class="card text-bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">Employee {{Emp.ename}}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{Emp.dept}}</h5>
+      <p class="card-text">Salary: {{Emp.salary}}</p>
+    </div>
+  </div> -->
+
+
+  <div appDeptDirective [dept]="Emp.dept" class="card" style="width: 18rem; ">
+    <div class="card-body">
+      <h5 class="card-title">Employee {{Emp.ename}}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">{{Emp.dept}}</h6>
+      <p class="card-text">{{Emp.salary|currency:'GBP'}}</p>
+      <p style="font-size: small; font-family: cursive;">{{s|json}}</p>
+      <p *ngFor="let i of [1,2,3,4]|slice:0:3">{{i}}</p>
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">{{today|date:'dd-mm-yyy'}}</a>
+    </div>
+  </div>
+
+
+

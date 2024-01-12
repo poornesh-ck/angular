@@ -1,0 +1,47 @@
+
+
+<nav class="navbar navbar-dark bg-dark fixed-top" >
+  <div class="container-fluid"  >
+    <a class="navbar-brand" href="#" style="font-family: 'Montserrat', sans-serif; font-weight:400;
+    letter-spacing: 3px;  padding: 12px 18px;
+    font-size: 18px;
+    line-height: 19px; color: #BFA181;" >Promazon</a>
+    
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel" >
+      <div class="offcanvas-header" >
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel" style="font-family: 'Montserrat', sans-serif; font-weight:900;
+        letter-spacing: 3px;  padding: 12px 18px;
+        font-size: 18px;
+        line-height: 19px; color: #BFA181;">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" style="font-family: 'Montserrat', sans-serif; font-weight:600;
+            letter-spacing: 3px;  padding: 12px 18px;
+            font-size: 14px;
+            line-height: 19px; color: #BFA181;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/product" style="font-family: 'Montserrat', sans-serif; font-weight:600;
+            letter-spacing: 3px;  padding: 12px 18px;
+            font-size: 14px;
+            line-height: 19px; color: #BFA181;">Product</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav><br><br><br>
+<!-- <a href="https://www.freepik.com/free-vector/cartoon-night-nature-landscape-full-moon-shining-sky-with-stars-field-with-pond-conifer-trees-rocks-dark-heaven-with-moonlight-romantic-fantasy-background-midnight-twilight-vector-view_23068350.htm"></a> -->
+<router-outlet></router-outlet>

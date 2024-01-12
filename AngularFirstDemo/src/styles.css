@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+/* 
+div{
+    border: 2px solid black;
+    color: aqua;
+    font-family: cursive;
+    text-align: center;
+    
+    text-shadow: 
+    1px 0px 0px black,   
+    -1px 0px 0px black,  
+    0px 2px 0px black,   
+    0px -2px 0px black;  
+
+    
+} */
+
+.card {
+    margin: auto;
+    border: 5px solid black ;
+   
+    
+}
+.list{
+    display: flow-root;
+    padding: 20px;
+    
+    
+}
+body {
+	background: linear-gradient(
+		-45deg,
+		#ffffff,
+		#ffe4e9,
+		#fcc8e2,
+		#f6baed,
+		#efb0ff,
+		#d3a2ff,
+		#8eb8ff,
+		#91efff,
+		#d5f9ff
+	);
+	background-size: 1000% 1000%;
+	animation: gradient 9s ease infinite;
+	height: 100vh;
+}
+
+ 
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
